@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+ 
+<body>
+
+<h2>Chooses candy by Sireesha Mamillapalli</h2>
+<form> 
+    <input type="checkbox" id="dark" name="candy" value="true">
+    <label for="dark">Dark Chocolate</label> <br>
+ 
+    <input type="checkbox" id="nuts" name="vacation" value="true">
+    <label for="Nuts">Nuts</label> <br>
+
+    <input type="checkbox" id="chewy" name="vacation" value="false">
+    <label for="chewy">Chewy</label> <br>
+
+    <input type="button" value="Select a box" onclick="selectBox()">
+</form>
+<br>
+<form>
+    <label for="size">Enter the size</label>
+    <input type="text" id="size" name="size" value="size"> <br>
+    
+    <label for="price">Enter price</label>
+    <input type="text" id="price" name="price"> <br>
+
+    <input type="button" value="Update the box" onclick="updateBox()">
+</form>
+<p id="result">Result will display </p>
+
+<script> 
+let my_candy_box={};
+function selectBox()
+    {
+        my_candy_box={};
+        let dark=document.getElementById("dark").checked
+        let nuts=document.getElementById("nuts").checked
+        let chewy=document.getElementById("chewy").checked
+        if(dark)
+        {
+            my_candy_box.dark = true;
+        }
+        else
+        {
+            my_candy_box.dark = false;
+        }
+        if(nuts)
+        {
+            my_candy_box.nuts = true;
+        }
+        else
+        {
+            my_candy_box.nuts = false;
+        }
+        if(chewy)
+        {
+            my_candy_box.chewy = true;
+        }
+        else
+        {
+            my_candy_box.chewy = false;
+        }
+        document.getElementById("result").innerHTML=JSON.stringify(my_candy_box)
+    } 
+
+    function updateBox()
+    {
+        let size=document.getElementById("size").value;
+        let price=document.getElementById("price").value;
+        my_candy_box["size"]=size;
+        my_candy_box["price"]=price;
+        document.getElementById("result").innerHTML=JSON.stringify(my_candy_box)
+    }
+</script>
+
+</body>
+</html> 
+Footer
