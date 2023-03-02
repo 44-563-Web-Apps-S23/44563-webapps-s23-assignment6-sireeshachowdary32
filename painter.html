@@ -10,11 +10,15 @@
 <h2>Painter entry Sireesha Mamillapalli</h2>
 
 <form>
+  <div class="mb-3 mt-3">
     <label for="painter">The hidden painter name </label>
     <input type ="password" id="painter" name="painter"value="Monet"> <br>
     <br>
+  </div><div class="mb-3 mt-3">
+
     <label for="guessPainter">Guess the painter </label>
     <input type ="text" id="guesspainter" name="guesspainter" autofocus> <br>
+  </div>
     <br>
     <input type="button" onclick="checkPainter()" value="Check the guess">
 </form>
@@ -40,9 +44,8 @@ function checkPainter(){
 }
 
 </script>
-<div>
-    <img id="plant-image" src="Iliamna.jpg" width="100" height="100" onclick="selectImage()">
-  </div>
+<div class="container-fluid">
+  <img id="plant-image" src="Iliamna.jpg" width="100" height="100" onclick="selectImage()">
   
   <script>
     var useImage = 1;
@@ -51,20 +54,22 @@ function checkPainter(){
       
       switch(useImage) {
         case 1:
-          document.getElementById("plant-image").src = "kalimeris.jpg";
+          document.getElementById("plant-image").src = "Iliamna.jpg";
           useImage = 2;
           break;
         case 2:
-          document.getElementById("plant-image").src = "Oemleria.jpg";
+          document.getElementById("plant-image").src = "LABURNUM.jpg";
           useImage = 3;
           break;
         case 3:
-          document.getElementById("plant-image").src = "Ratibida.jpg";
+          document.getElementById("plant-image").src = "LAMIUM.jpg";
           useImage = 1;
           break;
       }
     }
     </script>
+      </div>
+
   
 
 </body>
